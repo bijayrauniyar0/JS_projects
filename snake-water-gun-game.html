@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function randomInt(min, max) {
+        return Math.floor(Math.random() * (max - min) ) + min;
+        }
+        compScore = 0
+        UserScore = 0
+        let check
+        
+        alert("Welcome to snake water and gun game")
+        confirm("Do you want to play")
+        alert("S = Snake \n G = gun \n W = water")
+        for(let i =0; i<5; i++){
+            game = ["S", "W", "G"]
+            index = randomInt(0,3)
+            computerChoice = game[index]
+            console.log(computerChoice)
+            userchoice = prompt("Enter Your choice in W, S, G")
+            userchoice = userchoice.toUpperCase()
+            while(userchoice != "S" && userchoice != "W" && userchoice != "G"){
+        
+            userchoice = prompt("Invalid Choice, Enter Your choice in W, S, G")
+            userchoice = userchoice.toUpperCase()
+            }
+            alert("You choosed"+userchoice +"\n" +"Computer choosed" + computerChoice)
+            if ((userchoice === "S" && computerChoice === "W") || (userchoice === "W" && computerChoice === "G") || (userchoice === "G" && computerChoice === "S")) {
+            alert("You won")
+            UserScore++
+            }
+            else{
+            alert("Computer won")
+            compScore++
+            }
+        }
+        console.log(UserScore)
+        console.log(compScore)
+        </script>
+</head>
+<body>
+    <h2>Helo World</h2>
+</body>
+</html>
